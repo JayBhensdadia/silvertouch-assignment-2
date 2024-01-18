@@ -13,7 +13,7 @@ class AVLNode {
     }
 }
 
-public class AVLTree {
+class AVLTree {
     private AVLNode root;
 
     public AVLTree() {
@@ -223,6 +223,11 @@ public class AVLTree {
         }
     }
 
+   
+}
+
+public class Main {
+
     public static void main(String[] args) {
         AVLTree avlTree = new AVLTree();
 
@@ -252,4 +257,5 @@ public class AVLTree {
         System.out.println("Inorder traversal after deleting " + keyToDelete + ":");
         avlTree.inorder();
     }
+    
 }

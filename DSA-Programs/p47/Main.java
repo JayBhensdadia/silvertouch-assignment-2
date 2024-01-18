@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class HopcroftKarp {
+class HopcroftKarp {
 
     private int[] pairU, pairV, dist;
     private List<Integer>[] graph;
@@ -14,7 +14,7 @@ public class HopcroftKarp {
 
         pairU = new int[u];
         pairV = new int[v];
-        dist = new int[u + v + 1]; // Corrected initialization
+        dist = new int[u + v + 1]; 
 
         NIL = u + v;
         INF = Integer.MAX_VALUE;
@@ -82,13 +82,19 @@ public class HopcroftKarp {
         return matching;
     }
 
+
+}
+
+
+public class Main {
+
     public static void main(String[] args) {
-        int u = 4; // Number of vertices in the left set
-        int v = 4; // Number of vertices in the right set
+        int u = 4; 
+        int v = 4; 
 
         HopcroftKarp hopcroftKarp = new HopcroftKarp(u, v);
 
-        // Add edges to the bipartite graph
+        
         hopcroftKarp.addEdge(0, 1);
         hopcroftKarp.addEdge(0, 2);
         hopcroftKarp.addEdge(1, 2);
@@ -99,4 +105,5 @@ public class HopcroftKarp {
         int maxCardinalityMatching = hopcroftKarp.maxCardinalityMatching();
         System.out.println("Maximum Cardinality Matching: " + maxCardinalityMatching);
     }
+    
 }

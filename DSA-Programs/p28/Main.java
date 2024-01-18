@@ -9,8 +9,7 @@ class Node {
         this.next = new Node[level + 1];
     }
 }
-
-public class SkipList {
+class SkipList {
     private static final int MAX_LEVEL = 16; 
     private int level; 
     private Node head; 
@@ -113,6 +112,12 @@ public class SkipList {
             System.out.println();
         }
     }
+
+
+}
+
+
+public class Main {
 
     public static void main(String[] args) {
         SkipList skipList = new SkipList();

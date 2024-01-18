@@ -22,7 +22,7 @@ class BTreeNode {
     }
 }
 
-public class BTree {
+class BTree {
     private BTreeNode root;
     private int order;
 
@@ -128,6 +128,12 @@ public class BTree {
             }
         }
     }
+
+   
+}
+
+
+public class Main {
 
     public static void main(String[] args) {
         BTree bTree = new BTree(3);

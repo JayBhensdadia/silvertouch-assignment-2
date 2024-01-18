@@ -14,7 +14,7 @@ class Node {
     }
 }
 
-public class RBTree {
+class RBTree {
     private Node root;
     private Node nil;
 
@@ -308,6 +308,12 @@ public class RBTree {
         inorderTraversal(root);
         System.out.println();
     }
+
+  
+}
+
+
+public class Main {
 
     public static void main(String[] args) {
         RBTree rbTree = new RBTree();

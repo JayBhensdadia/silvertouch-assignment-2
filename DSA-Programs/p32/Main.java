@@ -1,44 +1,46 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class AhoCorasick {
+class TrieNode {
+    TrieNode[] children = new TrieNode[26];
+    TrieNode fail;
+    boolean isEnd;
+    String word;
 
-    static class TrieNode {
-        TrieNode[] children = new TrieNode[26];
-        TrieNode fail;
-        boolean isEnd;
-        String word;
-
-        TrieNode() {
-            isEnd = false;
-            fail = null;
-            word = null;
-            for (int i = 0; i < 26; i++) {
-                children[i] = null;
-            }
+    TrieNode() {
+        isEnd = false;
+        fail = null;
+        word = null;
+        for (int i = 0; i < 26; i++) {
+            children[i] = null;
         }
     }
+}
 
-    static class Trie {
-        TrieNode root;
+class Trie {
+    TrieNode root;
 
-        Trie() {
-            root = new TrieNode();
-        }
-
-        void insert(String pattern) {
-            TrieNode node = root;
-            for (char c : pattern.toCharArray()) {
-                int index = c - 'a';
-                if (node.children[index] == null) {
-                    node.children[index] = new TrieNode();
-                }
-                node = node.children[index];
-            }
-            node.isEnd = true;
-            node.word = pattern;
-        }
+    Trie() {
+        root = new TrieNode();
     }
+
+    void insert(String pattern) {
+        TrieNode node = root;
+        for (char c : pattern.toCharArray()) {
+            int index = c - 'a';
+            if (node.children[index] == null) {
+                node.children[index] = new TrieNode();
+            }
+            node = node.children[index];
+        }
+        node.isEnd = true;
+        node.word = pattern;
+    }
+}
+
+class AhoCorasick {
+
+   
 
     static void buildFailureLinks(Trie trie) {
         Queue<TrieNode> queue = new LinkedList<>();
@@ -96,6 +98,12 @@ public class AhoCorasick {
         }
     }
 
+
+}
+
+
+public class Main {
+
     public static void main(String[] args) {
         Trie trie = new Trie();
         trie.insert("he");
@@ -103,9 +111,9 @@ public class AhoCorasick {
         trie.insert("his");
         trie.insert("hers");
 
-        buildFailureLinks(trie);
+        AhoCorasick.buildFailureLinks(trie);
 
         String text = "ahishers";
-        search(trie, text);
+        AhoCorasick.search(trie, text);
     }
 }

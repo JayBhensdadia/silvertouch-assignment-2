@@ -8,8 +8,8 @@ class Node {
     }
 }
 
-public class SplayTree {
-    private Node root;
+class SplayTree {
+    public Node root;
 
     public SplayTree() {
         this.root = null;
@@ -143,6 +143,12 @@ public class SplayTree {
         }
     }
 
+
+}
+
+
+public class Main {
+
     public static void main(String[] args) {
         SplayTree splayTree = new SplayTree();
 
@@ -160,4 +166,5 @@ public class SplayTree {
         System.out.println("\nIn-order traversal after searching for 40:");
         splayTree.inOrderTraversal(splayTree.root);
     }
+    
 }

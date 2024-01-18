@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class EulerianPathCircuit {
+class EulerianPathCircuit {
 
     private int vertices;
     private List<Integer>[] adjacencyList;
@@ -101,7 +101,7 @@ public class EulerianPathCircuit {
         adjacencyList[v].remove(Integer.valueOf(u));
     }
 
-    private void printEulerianPathCircuit() {
+    public void printEulerianPathCircuit() {
         if (!isConnected()) {
             System.out.println("Graph is not Eulerian.");
             return;
@@ -140,6 +140,12 @@ public class EulerianPathCircuit {
         return 0;
     }
 
+
+}
+
+
+public class Main {
+
     public static void main(String[] args) {
         EulerianPathCircuit eulerianGraph = new EulerianPathCircuit(5);
         eulerianGraph.addEdge(0, 1);
@@ -152,4 +158,5 @@ public class EulerianPathCircuit {
         System.out.println("Eulerian Path or Circuit:");
         eulerianGraph.printEulerianPathCircuit();
     }
+    
 }

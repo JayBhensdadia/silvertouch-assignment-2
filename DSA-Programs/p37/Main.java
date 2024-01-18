@@ -23,7 +23,7 @@ class RadixNode {
     }
 }
 
-public class RadixTree {
+class RadixTree {
     private RadixNode root;
 
     public RadixTree() {
@@ -66,6 +66,12 @@ public class RadixTree {
         return child != null && searchHelper(child, word.substring(1));
     }
 
+ 
+}
+
+
+public class Main {
+
     public static void main(String[] args) {
         RadixTree radixTree = new RadixTree();
 
@@ -77,4 +83,5 @@ public class RadixTree {
         System.out.println("Search 'app': " + radixTree.search("app")); // true
         System.out.println("Search 'orange': " + radixTree.search("orange")); // false
     }
+    
 }

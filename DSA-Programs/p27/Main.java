@@ -1,7 +1,8 @@
 import java.util.Arrays;
+
 import java.util.Random;
 
-public class ReservoirSampling {
+class ReservoirSampling {
 
     public static int[] reservoirSampling(int[] stream, int k) {
         int[] reservoir = new int[k];
@@ -26,11 +27,15 @@ public class ReservoirSampling {
         return reservoir;
     }
 
+   
+}
+
+public class Main {
     public static void main(String[] args) {
         int[] stream = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         int k = 3;
 
-        int[] sampledElements = reservoirSampling(stream, k);
+        int[] sampledElements = ReservoirSampling.reservoirSampling(stream, k);
 
         System.out.println("Sampled Elements: " + Arrays.toString(sampledElements));
     }

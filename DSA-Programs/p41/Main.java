@@ -36,7 +36,7 @@ class UnionFind {
     }
 }
 
-public class WeightedUnionFind {
+public class Main {
     public static void main(String[] args) {
         int n = 6;
         UnionFind uf = new UnionFind(n);

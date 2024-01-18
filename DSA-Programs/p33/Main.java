@@ -4,53 +4,38 @@ import java.util.ArrayList;
 import java.util.Comparator; 
 import java.util.List; 
 
-public class KruskalsMST { 
+class Edge { 
+    int src, dest, weight; 
+
+    public Edge(int src, int dest, int weight) 
+    { 
+        this.src = src; 
+        this.dest = dest; 
+        this.weight = weight; 
+    } 
+} 
+
+
+class Subset { 
+    int parent, rank; 
+
+    public Subset(int parent, int rank) 
+    { 
+        this.parent = parent; 
+        this.rank = rank; 
+    } 
+} 
+
+class KruskalsMST { 
 
 	
-	static class Edge { 
-		int src, dest, weight; 
-
-		public Edge(int src, int dest, int weight) 
-		{ 
-			this.src = src; 
-			this.dest = dest; 
-			this.weight = weight; 
-		} 
-	} 
+	
 
 	
-	static class Subset { 
-		int parent, rank; 
-
-		public Subset(int parent, int rank) 
-		{ 
-			this.parent = parent; 
-			this.rank = rank; 
-		} 
-	} 
+	
 
 	
-	public static void main(String[] args) 
-	{ 
-		int V = 4; 
-		List<Edge> graphEdges = new ArrayList<Edge>( 
-			List.of(new Edge(0, 1, 10), new Edge(0, 2, 6), 
-					new Edge(0, 3, 5), new Edge(1, 3, 15), 
-					new Edge(2, 3, 4))); 
-
-		
-		graphEdges.sort(new Comparator<Edge>() { 
-			@Override public int compare(Edge o1, Edge o2) 
-			{ 
-				return o1.weight - o2.weight; 
-			} 
-		}); 
-
-		kruskals(V, graphEdges); 
-	} 
-
-	
-	private static void kruskals(int V, List<Edge> edges) 
+	public static void kruskals(int V, List<Edge> edges) 
 	{ 
 		int j = 0; 
 		int noOfEdges = 0; 
@@ -126,3 +111,26 @@ public class KruskalsMST {
 		return subsets[i].parent; 
 	} 
 } 
+
+public class Main {
+
+    public static void main(String[] args) 
+	{ 
+		int V = 4; 
+		List<Edge> graphEdges = new ArrayList<Edge>( 
+			List.of(new Edge(0, 1, 10), new Edge(0, 2, 6), 
+					new Edge(0, 3, 5), new Edge(1, 3, 15), 
+					new Edge(2, 3, 4))); 
+
+		
+		graphEdges.sort(new Comparator<Edge>() { 
+			@Override public int compare(Edge o1, Edge o2) 
+			{ 
+				return o1.weight - o2.weight; 
+			} 
+		}); 
+
+		KruskalsMST.kruskals(V, graphEdges); 
+	} 
+    
+}

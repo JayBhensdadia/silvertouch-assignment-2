@@ -1,7 +1,7 @@
 
 import java.util.Random;
 
-public class ArbitraryRandomGenerator {
+class ArbitraryRandomGenerator {
 
     private double[] probabilities;
     private int[] values;
@@ -44,6 +44,10 @@ public class ArbitraryRandomGenerator {
         throw new IllegalStateException("Error in random number generation.");
     }
 
+    
+}
+
+public class Main{
     public static void main(String[] args) {
         double[] probabilities = {0.2, 0.3, 0.5};
         int[] values = {1, 2, 3};

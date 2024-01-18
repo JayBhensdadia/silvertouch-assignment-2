@@ -1,7 +1,7 @@
 import java.util.BitSet;
 import java.util.function.Function;
 
-public class BloomFilter<T> {
+class BloomFilter<T> {
     private BitSet bitSet;
     private int size;
     private Function<T, Integer>[] hashFunctions;
@@ -29,6 +29,14 @@ public class BloomFilter<T> {
         return true;
     }
 
+ 
+}
+
+
+
+
+public class Main {
+
     public static void main(String[] args) {
         Function<String, Integer> hashFunction1 = String::hashCode;
         Function<String, Integer> hashFunction2 = s -> s.hashCode() * 31;
@@ -39,7 +47,8 @@ public class BloomFilter<T> {
         bloomFilter.add("banana");
         bloomFilter.add("orange");
 
-        System.out.println(bloomFilter.contains("apple"));    // true
-        System.out.println(bloomFilter.contains("grapefruit")); // false
+        System.out.println(bloomFilter.contains("apple"));    
+        System.out.println(bloomFilter.contains("grapefruit")); 
     }
+    
 }

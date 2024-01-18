@@ -10,7 +10,7 @@ class Node {
     }
 }
 
-public class Treap {
+class Treap {
     private Node root;
 
     private Node rotateRight(Node y) {
@@ -100,6 +100,11 @@ public class Treap {
             return search(root.right, key);
         }
     }
+
+ 
+}
+
+public class Main {
 
     public static void main(String[] args) {
         Treap treap = new Treap();

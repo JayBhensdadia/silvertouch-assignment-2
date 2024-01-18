@@ -72,7 +72,7 @@ class HuffmanTree {
     }
 }
 
-public class HuffmanCoding {
+class HuffmanCoding {
 
     public static String compress(String text) {
         Map<Character, Integer> frequencyMap = calculateFrequency(text);
@@ -102,7 +102,7 @@ public class HuffmanCoding {
         return decompressedText.toString();
     }
 
-    private static Map<Character, Integer> calculateFrequency(String text) {
+    public static Map<Character, Integer> calculateFrequency(String text) {
         Map<Character, Integer> frequencyMap = new HashMap<>();
         for (char c : text.toCharArray()) {
             frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
@@ -110,17 +110,22 @@ public class HuffmanCoding {
         return frequencyMap;
     }
 
+}
+
+
+public class Main {
+
+    
     public static void main(String[] args) {
         String originalText = "abracadabra";
         System.out.println("Original Text: " + originalText);
 
         
-        String compressedText = compress(originalText);
+        String compressedText = HuffmanCoding.compress(originalText);
         System.out.println("Compressed Text: " + compressedText);
 
         
-        String decompressedText = decompress(compressedText, new HuffmanTree(calculateFrequency(originalText)).getRoot());
+        String decompressedText = HuffmanCoding.decompress(compressedText, new HuffmanTree(HuffmanCoding.calculateFrequency(originalText)).getRoot());
         System.out.println("Decompressed Text: " + decompressedText);
     }
 }
-

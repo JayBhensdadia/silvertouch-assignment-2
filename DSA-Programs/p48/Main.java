@@ -2,7 +2,7 @@
 
 import java.util.Arrays;
 
-public class SuffixArray {
+class SuffixArray {
 
     public static int[] buildSuffixArray(String text) {
         int n = text.length();
@@ -37,14 +37,20 @@ public class SuffixArray {
         }
     }
 
+
+}
+
+public class Main {
+
     public static void main(String[] args) {
         String text = "banana";
 
-        int[] suffixArray = buildSuffixArray(text);
+        int[] suffixArray = SuffixArray.buildSuffixArray(text);
 
         System.out.println("Suffix Array for the string \"" + text + "\":");
         for (int i : suffixArray) {
             System.out.print(i + " ");
         }
     }
+    
 }

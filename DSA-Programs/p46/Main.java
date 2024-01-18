@@ -10,7 +10,7 @@ class Node {
     }
 }
 
-public class CartesianTree {
+class CartesianTree {
 
     public Node constructCartesianTree(int[] arr) {
         if (arr == null || arr.length == 0) {
@@ -41,13 +41,19 @@ public class CartesianTree {
         return root;
     }
 
-    private void inOrderTraversal(Node root) {
+    public void inOrderTraversal(Node root) {
         if (root != null) {
             inOrderTraversal(root.left);
             System.out.print(root.data + " ");
             inOrderTraversal(root.right);
         }
     }
+
+
+}
+
+
+public class Main {
 
     public static void main(String[] args) {
         CartesianTree cartesianTree = new CartesianTree();
@@ -58,4 +64,5 @@ public class CartesianTree {
         System.out.println("In-order traversal of Cartesian Tree:");
         cartesianTree.inOrderTraversal(root);
     }
+    
 }

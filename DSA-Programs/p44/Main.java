@@ -13,8 +13,8 @@ class Node {
     }
 }
 
-public class SkipGraph {
-    private static final int MAX_LEVEL = 16; // Maximum level for the skip graph
+class SkipGraph {
+    private static final int MAX_LEVEL = 16; 
     private Node head;
     private int level;
     private Random random;
@@ -97,6 +97,12 @@ public class SkipGraph {
         }
     }
 
+   
+}
+
+
+public class Main {
+
     public static void main(String[] args) {
         SkipGraph skipGraph = new SkipGraph();
 
@@ -120,4 +126,5 @@ public class SkipGraph {
 
         System.out.println("Search 19 after deletion: " + skipGraph.search(19));
     }
+    
 }
