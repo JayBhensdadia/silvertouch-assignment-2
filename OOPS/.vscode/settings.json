@@ -1,0 +1,9 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\baps\\Downloads\\jar_files\\jcuda-12.0.0.jar",
+        "c:\\Users\\baps\\Downloads\\jar_files\\jcuda-natives-12.0.0-linux-x86_64.jar",
+        "c:\\Users\\baps\\Downloads\\jar_files (1)\\aspectjmatcher-1.9.21.jar",
+        "c:\\Users\\baps\\Downloads\\jar_files (2)\\commons-exec-1.4.0.jar"
+    ]
+}

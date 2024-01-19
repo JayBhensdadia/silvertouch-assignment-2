@@ -1,0 +1,3 @@
+JCuda: https://jar-download.com/artifacts/org.jcuda/jcuda
+
+AspectJ: https://jar-download.com/artifacts/org.aspectj
